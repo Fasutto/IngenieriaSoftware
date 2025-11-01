@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Desarrollo Académico - Inicio</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/desarrollo.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="width:220px;">
+      <div class="user-profile" style="padding:14px;">
+        <img src="../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div style="margin-top:8px">
+          <p class="user-name small" id="profile-name">Desarrollo Academico</p>
+          <p class="user-role small" id="profile-role">Desarrollo Academico</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Desarrollo_Inicio.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Desarrollo_Asignar.html'">📝 Asignar tutorados</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Desarrollo_Perfil.html'">👤 Mi Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left:12px;flex:1;padding:24px;">
+      <header><h2>Desarrollo Académico — Inicio</h2></header>
+
+      <section style="margin-top:12px;max-width:920px">
+        <p class="small">Bienvenido al módulo de Desarrollo Académico. Use las opciones del menú para asignar o consultar el número de tutorados por docente.</p>
+
+        <div style="margin-top:18px;display:flex;gap:8px;">
+          <button class="btn-primary" onclick="location.href='Desarrollo_Asignar.html'">📝 Ir a Asignar Tutorados</button>
+          <button class="btn-tertiary" onclick="location.href='Desarrollo_Perfil.html'">👤 Mi Perfil</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

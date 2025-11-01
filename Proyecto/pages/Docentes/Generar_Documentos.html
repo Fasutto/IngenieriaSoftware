@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Generar Documentos - EDDi</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/generar.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="width:220px;">
+      <div class="user-profile" style="padding:14px;">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img" style="width:48px;height:48px;border-radius:8px;">
+        <div style="margin-top:8px">
+          <p class="user-name" id="profile-name">Docente</p>
+          <p class="user-role small" id="profile-role">Rol</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Inicio_Docente.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Generar_Documentos.html'">📝 Generar Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Documentos_Generados.html'">📄 Mis Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Perfil_Docente.html'">👤 Mi Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left:12px;flex:1;padding:24px;">
+      <header><h2>Generar Documentos</h2></header>
+
+      <div id="document-generator-area">
+        <div id="generator-content" style="display:flex;gap:18px;align-items:flex-start;">
+          <aside id="doc-list-vertical" style="width:360px;background:var(--card);padding:12px;border-radius:8px;max-height:70vh;overflow:auto;">
+            <h3>Documentos de inicio</h3>
+            <div id="list-inicio" class="doc-list"></div>
+
+            <h3 style="margin-top:18px">Documentos Factor 1</h3>
+            <div id="list-factor1" class="doc-list"></div>
+          </aside>
+
+          <section id="doc-detail" style="flex:1;min-width:320px;">
+            <div id="doc-detail-container" class="detail-empty">Seleccione un documento en la lista para ver la interfaz.</div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Añadido: principal.js poblará la lista de 30 documentos aquí -->
+  <script type="module" src="Inicio_Docente.js" defer></script>
+  <script type="module" src="Generar_Documentos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mis Documentos - EDDi</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/mis_documentos.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="width:220px;">
+      <div class="user-profile" style="padding:14px;">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img" style="width:48px;height:48px;border-radius:8px;">
+        <div style="margin-top:8px">
+          <p class="user-name" id="profile-name">Docente</p>
+          <p class="user-role small" id="profile-role">Rol</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Inicio_Docente.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Generar_Documentos.html'">📝 Generar Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Documentos_Generados.html'">📄 Mis Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Perfil_Docente.html'">👤 Mi Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left:12px;flex:1;padding:24px;">
+      <header><h2>Mis Documentos</h2></header>
+
+      <!-- Grid principal: fila superior = filtrado, fila inferior = listado -->
+      <div class="docs-grid" style="display:grid;grid-template-rows:auto 1fr;gap:12px;margin-top:12px;">
+        <!-- Grid de filtrado -->
+        <div class="filter-grid" style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;">
+          <input id="filter" placeholder="Filtrar por título..." style="width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06)">
+          <div style="display:flex;gap:8px;">
+            <button id="btn-clear" class="secondary">Limpiar</button>
+            <button id="btn-refresh" class="secondary" onclick="location.reload()">Refrescar</button>
+          </div>
+        </div>
+
+        <!-- Grid de listado -->
+        <div class="list-grid" style="background:var(--card);padding:12px;border-radius:8px;min-height:240px;overflow:auto;">
+          <div id="docs-container" class="docs-container">
+            <!-- El script mis_documentos.js rellenará esta área.
+                Si no hay documentos se mostrará un mensaje en este grid -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="Documentos_Generados.js" defer></script>
+</body>
+</html>

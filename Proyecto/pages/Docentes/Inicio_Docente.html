@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Panel de Generación EDDi</title>
+    <link rel="stylesheet" href="../../src/estilos/principal.css">
+    <!-- estilos movidos a principal.css -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" style="width:220px;">
+            <div class="user-profile" style="padding:14px;">
+                <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img" style="width:48px;height:48px;border-radius:8px;">
+                <div style="margin-top:8px">
+                    <p class="user-name" id="profile-name">Fausto Gabriel E.</p>
+                    <p class="user-role small" id="profile-role">Docente Precalificado</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-item">
+                    <button class="nav-btn" onclick="location.href='Inicio_Docente.html'">🏠 Inicio</button>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-btn" onclick="location.href='Generar_Documentos.html'">📝 Generar Documentos</button>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-btn" onclick="location.href='Documentos_Generados.html'">📄 Mis Documentos</button>
+                </div>
+
+                <div class="nav-item">
+                    <button class="nav-btn" onclick="location.href='Perfil_Docente.html'">👤 Mi Perfil</button>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content" style="margin-left:12px;flex:1;">
+            <h1>Panel de Generación de Documentos EDDi</h1>
+            <p>Bienvenido al sistema. Use el menú lateral o el botón para ir a la interfaz de generación de documentos.</p>
+
+            <div style="margin-top:16px">
+                <div class="welcome-cta">
+                    <button class="btn-primary" onclick="location.href='Generar_Documentos.html'">📝 Ir a Generar Documentos</button>
+                    <button class="btn-secondary" onclick="location.href='Documentos_Generados.html'">📄 Mis Documentos</button>
+                    <button class="btn-tertiary" onclick="location.href='Perfil_Docente.html'">👤 Mi Perfil</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Nota: ya no se incluye principal.js aquí, la lista se muestra en generar.html -->
+</body>
+</html>

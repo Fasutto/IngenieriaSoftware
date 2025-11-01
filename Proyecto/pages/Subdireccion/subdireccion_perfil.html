@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subdirección - Perfil</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/subdireccion_perfil.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div class="user-meta">
+          <p id="sp-name" class="user-name small">Usuario</p>
+          <p id="sp-role" class="user-role small">Subdirección</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_inicio.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_docentes.html'">👥 Docentes registrados</button></div>
+        <div class="nav-item"><button class="nav-btn active" onclick="location.href='./subdireccion_perfil.html'">👤 Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header><h2>Perfil — Subdirección</h2></header>
+
+      <section class="sd-profile-card">
+        <div class="photo-wrap">
+          <img id="sp-photo" src="../../src/components/foto_usuario.png" alt="Foto subdirección">
+        </div>
+
+        <div class="info-wrap">
+          <p class="muted small">Correo</p>
+          <p id="sp-email" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Nombres</p>
+          <p id="sp-nombres" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Apellidos</p>
+          <p id="sp-apellidos" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Docentes registrados</p>
+          <p id="sp-docentes" class="info-line strong">0</p>
+
+          <div class="actions" style="margin-top:18px">
+            <button id="sp-back" class="btn-secondary">Volver</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const data = JSON.parse(localStorage.getItem('subProfile') || localStorage.getItem('userProfile') || 'null') || {};
+      const photo = document.getElementById('sp-photo');
+      const email = document.getElementById('sp-email');
+      const nombres = document.getElementById('sp-nombres');
+      const apellidos = document.getElementById('sp-apellidos');
+      const docentesCount = document.getElementById('sp-docentes');
+      const nameSb = document.getElementById('sp-name');
+      const roleSb = document.getElementById('sp-role');
+
+      photo.src = data.photo || '../../src/components/foto_usuario.png';
+      email.textContent = data.email || '-';
+      nombres.textContent = data.nombres || data.name || '-';
+      apellidos.textContent = `${data.apellidoP||''} ${data.apellidoM||''}`.trim() || '-';
+
+      const docs = JSON.parse(localStorage.getItem('docentes')||'[]');
+      docentesCount.textContent = String(docs.length);
+
+      if (nameSb) nameSb.textContent = (data.nombres||data.name||'Usuario').split(' ')[0];
+      if (roleSb) roleSb.textContent = data.role || 'Subdirección';
+
+      document.getElementById('sp-back')?.addEventListener('click', ()=> location.href='./subdireccion_inicio.html');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subdirección - Inicio</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/subdireccion_inicio.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div class="user-meta">
+          <p id="sb-name" class="user-name small">Usuario</p>
+          <p id="sb-role" class="user-role small">Subdirección</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn active" onclick="location.href='./subdireccion_inicio.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_docentes.html'">👥 Docentes registrados</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_perfil.html'">👤 Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header><h2>Inicio - Subdirección</h2></header>
+
+      <section class="sd-card">
+        <p class="small">Resumen del módulo de Subdirección. Vea los docentes registrados o revise su perfil.</p>
+
+        <div class="actions-row" style="margin-top:14px;">
+          <button class="btn-primary" onclick="location.href='./subdireccion_docentes.html'">Ver docentes</button>
+          <button class="btn-secondary" onclick="location.href='./subdireccion_perfil.html'">Mi perfil</button>
+        </div>
+
+        <div class="summary" style="margin-top:16px;">
+          <p id="sd-summary" class="small">Cargando...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // pequeño script para resumen
+    (function(){
+      const sbName = document.getElementById('sb-name');
+      const sbRole = document.getElementById('sb-role');
+      const summary = document.getElementById('sd-summary');
+      const up = JSON.parse(localStorage.getItem('subProfile') || localStorage.getItem('userProfile') || 'null');
+      const docentes = JSON.parse(localStorage.getItem('docentes') || '[]');
+
+      if (up) {
+        sbName.textContent = (up.nombres || up.name || 'Usuario').split(' ')[0];
+        sbRole.textContent = up.role || 'Subdirección';
+      }
+
+      const total = docentes.length;
+      summary.textContent = `Docentes registrados: ${total}`;
+    })();
+  </script>
+</body>
+</html>

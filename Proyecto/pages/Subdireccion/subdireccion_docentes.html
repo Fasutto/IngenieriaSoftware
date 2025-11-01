@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subdirección - Docentes registrados</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/subdireccion_docentes.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div class="user-meta">
+          <p id="sd-name" class="user-name small">Usuario</p>
+          <p id="sd-role" class="user-role small">Subdirección</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_inicio.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn active" onclick="location.href='./subdireccion_docentes.html'">👥 Docentes registrados</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='./subdireccion_perfil.html'">👤 Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header><h2>Docentes registrados</h2></header>
+
+      <section class="sd-card">
+        <div class="list-controls" style="display:flex;gap:8px;align-items:center;">
+          <input id="sd-filter" class="input" placeholder="Filtrar por nombre o matrícula..." />
+          <button id="sd-refresh" class="btn secondary">Refrescar</button>
+        </div>
+
+        <div id="sd-list" class="sd-list" style="margin-top:12px;">
+          <!-- listado inyectado por subdireccion_docentes.js -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./subdireccion_docentes.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Perfil — Desarrollo Académico</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/desarrollo_perfil.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="width:220px;">
+      <div class="user-profile" style="padding:14px;">
+        <img src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div style="margin-top:8px">
+          <p class="user-name small" id="profile-name">Usuario</p>
+          <p class="user-role small" id="profile-role">Rol</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='desarrollo_inicio.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='desarrollo_asignar.html'">📝 Asignar tutorados</button></div>
+        <div class="nav-item"><button class="nav-btn active" onclick="location.href='desarrollo_perfil.html'">👤 Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left:12px;flex:1;padding:24px;">
+      <header><h2>Perfil — Desarrollo Académico</h2></header>
+
+      <section class="dev-profile-card" aria-live="polite">
+        <div class="photo-wrap">
+          <img id="dp-photo" src="../../src/components/foto_usuario.png" alt="Foto usuario">
+        </div>
+
+        <div class="info-wrap">
+          <p class="muted small">Correo</p>
+          <p id="dp-email" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Nombres</p>
+          <p id="dp-nombres" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Apellidos</p>
+          <p id="dp-apellidos" class="info-line">-</p>
+
+          <p class="muted small" style="margin-top:12px">Tutorados asignados (total)</p>
+          <p id="dp-tutorados" class="info-line strong">0</p>
+
+          <div class="actions" style="margin-top:18px">
+            <button id="btn-back-da" class="secondary">Volver</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./desarrollo_perfil.js" defer></script>
+</body>
+</html>

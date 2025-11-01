@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mi Perfil - EDDi</title>
+  <link rel="stylesheet" href="../../src/estilos/principal.css">
+  <link rel="stylesheet" href="../../src/estilos/perfil.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="width:220px;">
+      <div class="user-profile" style="padding:14px;">
+        <img id="profile-photo" src="../../src/components/foto_usuario.png" alt="Foto" class="profile-img">
+        <div style="margin-top:8px">
+          <p class="user-name small" id="profile-name">Docente</p>
+          <p class="user-role small" id="profile-role">Rol</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Inicio_Docente.html'">🏠 Inicio</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Generar_Documentos.html'">📝 Generar Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Documentos_Generados.html'">📄 Mis Documentos</button></div>
+        <div class="nav-item"><button class="nav-btn" onclick="location.href='Perfil_Docente.html'">👤 Mi Perfil</button></div>
+      </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left:12px;flex:1;padding:24px;">
+      <header><h2>Mi Perfil</h2></header>
+
+      <!-- Grid con dos secciones: información | cambio de contraseña -->
+      <div class="profile-grid">
+        <section class="profile-card profile-info">
+          <div class="profile-header">
+            <img id="pf-photo" src="../../src/components/foto_usuario.png" alt="Foto" class="profile-large-photo">
+            <div class="profile-meta centered">
+              <p class="photo-label"><strong>Foto</strong></p>
+              <p class="muted small"><strong>Correo:</strong> <span id="pf-email"></span></p>
+              <p><strong>Nombres:</strong> <span id="pf-nombres"></span></p>
+              <p><strong>Apellidos:</strong> <span id="pf-apellido-p"></span> <span id="pf-apellido-m"></span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-card profile-password">
+          <h3>Cambiar contraseña</h3>
+          <div class="form">
+            <label class="small">Contraseña actual</label>
+            <input id="current" type="password" placeholder="Contraseña actual" />
+            <label class="small">Nueva contraseña</label>
+            <input id="newpass" type="password" placeholder="Nueva contraseña" />
+            <label class="small">Confirmar nueva contraseña</label>
+            <input id="confirm" type="password" placeholder="Confirmar nueva contraseña" />
+            <div class="form-actions">
+              <button id="btn-save" class="primary">Guardar</button>
+              <button id="btn-cancel" class="secondary">Cancelar</button>
+            </div>
+            <div id="msg" class="small"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="Perfil_Docente.js" defer></script>
+</body>
+</html>
