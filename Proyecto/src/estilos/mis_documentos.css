@@ -1,0 +1,97 @@
+/* Estilos específicos para Mis Documentos (usa variables de principal.css) */
+
+.docs-grid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Filter grid (fila superior) */
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+/* contenedor de listado */
+.list-grid {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 240px;
+  overflow: auto;
+}
+
+/* contenedor interior donde se inyectan cards */
+.docs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* tarjeta de documento */
+.doc-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: background .15s, transform .08s;
+}
+.doc-card:hover {
+  background: rgba(10,116,255,0.04);
+  transform: translateY(-2px);
+}
+
+.doc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.doc-title {
+  font-weight: 600;
+  color: #fff;
+}
+.doc-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* acciones */
+.doc-actions {
+  display:flex;
+  gap:8px;
+}
+.doc-actions button { min-width:90px; }
+
+/* Empty message centrado */
+.empty-message {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:28px;
+  border-radius:6px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* botones (usa clases .primary .secondary definidas globalmente en principal.css) */
+.btn-view.secondary, .btn-download.primary {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight:600;
+}
+
+/* Responsive */
+@media (max-width:700px) {
+  .docs-container { gap: 12px; }
+  .doc-card { flex-direction: column; align-items: flex-start; gap:8px; }
+  .doc-actions { width:100%; justify-content:flex-end; }
+}

@@ -1,0 +1,37 @@
+:root{
+  --bg: #071025;
+  --panel:#0f1724;
+  --card-bg:#0f1724;
+  --accent:#0A66C2;
+  --muted:#bdbdbd;
+  --text:#e6eef8;
+  --border: rgba(255,255,255,0.06);
+  --shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+.dashboard-container{ display:flex; min-height:100vh; background:var(--bg); color:var(--text); font-family:Inter,Segoe UI,Roboto,Arial,sans-serif; }
+
+/* Sidebar (consistente con proyecto) */
+.sidebar{ width:220px; padding:12px; box-sizing:border-box; border-right:1px solid rgba(255,255,255,0.02); }
+.user-profile{ display:flex; gap:10px; align-items:center; padding:6px 4px; }
+.profile-img{ width:48px; height:48px; border-radius:8px; object-fit:cover; border:1px solid rgba(255,255,255,0.04); }
+.user-name{ margin:0; font-weight:700; color:var(--text); }
+.user-role{ margin:0; color:var(--muted); font-size:13px; }
+.sidebar-nav{ margin-top:12px; display:flex; flex-direction:column; gap:6px; }
+.nav-btn{ width:100%; text-align:left; padding:8px 10px; border-radius:8px; background:transparent; border:none; color:var(--text); cursor:pointer; font-weight:600; }
+.nav-btn.active{ background: rgba(10,102,194,0.12); }
+
+/* Main */
+.main-content{ flex:1; padding:24px; box-sizing:border-box; }
+.sd-card{ background:var(--card-bg); padding:16px; border-radius:10px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.02); max-width:920px; }
+
+/* Buttons */
+.btn{ padding:10px 14px; border-radius:8px; font-weight:700; cursor:pointer; border:none; }
+.btn.primary{ background:var(--accent); color:#fff; }
+.btn.secondary{ background:transparent; border:1px solid var(--border); color:var(--text); }
+
+/* summary */
+.summary .small{ color:var(--muted); }
+
+/* responsive */
+@media (max-width:980px){ .sidebar{ width:72px; } .user-meta{ display:none; } }

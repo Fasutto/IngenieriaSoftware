@@ -1,0 +1,87 @@
+:root{
+  --card-bg: #0f1724;
+  --accent: #0A66C2;
+  --muted: #bdbdbd;
+  --white: #fff;
+  --shadow: 0 8px 22px rgba(0,0,0,0.35);
+  --border: rgba(255,255,255,0.04);
+}
+
+/* tarjeta ocupando el ancho del main (respeta el padding del main) */
+.dev-profile-card{
+  width: 100%;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.02);
+  box-sizing: border-box;
+}
+
+/* columna de la foto: tamaño fijo */
+.photo-wrap{
+  flex: 0 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-wrap img{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+}
+
+/* columna de información: ocupa el resto */
+.info-wrap{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--white);
+}
+
+/* etiquetas y valores */
+.info-wrap .muted{ color: var(--muted); font-size: 13px; margin: 0; }
+.info-line{ margin: 6px 0 0 0; font-size: 16px; color: var(--white); }
+.strong{ font-weight:700; font-size:20px; color:var(--accent); margin:0; }
+
+/* acciones alineadas al final en escritorio */
+.actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* botones heredan estilo global; pequeños ajustes */
+.actions .primary, .actions .secondary {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* responsive: apilar en pantallas pequeñas */
+@media (max-width:820px){
+  .dev-profile-card{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .photo-wrap{
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: center;
+  }
+  .photo-wrap img{
+    width: 120px;
+    height: 120px;
+  }
+  .info-wrap{ width: 100%; }
+  .actions{ justify-content: center; }
+}

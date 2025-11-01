@@ -1,0 +1,39 @@
+/* admin_styles.css - Estilos para el Panel de Administración y Validación */
+
+/* Importar estilos base del dashboard para la estructura y Glassmorphism */
+@import url("principal.css"); 
+
+/* Sobreescribir estilos para diferenciar el rol ADMIN */
+
+.sidebar.admin-sidebar {
+    /* Mantenemos el Glassmorphism, pero podemos cambiar el borde si queremos */
+    border-right: 1px solid rgba(255, 165, 0, 0.4); /* Borde anaranjado suave */
+}
+
+/* Color de acento del perfil */
+.profile-img {
+    border: 3px solid #ffa500; /* Anaranjado para Admin */
+}
+
+/* Botones de navegación activos para el Admin */
+.sidebar-nav .nav-btn.active {
+    background: rgba(255, 165, 0, 0.4); /* Fondo activo anaranjado */
+    border-left: 5px solid #ffa500;
+    padding-left: 15px;
+}
+
+.sidebar-nav .nav-btn:hover {
+    box-shadow: 0 0 8px #ffa500cc; /* Sombra de enfoque anaranjada */
+}
+
+
+/* Estilos específicos para las áreas de contenido de validación */
+#validation-list-area {
+    margin-top: 30px;
+    padding: 30px;
+    background: rgba(255, 165, 0, 0.1); /* Glassmorphism ligero en contenido */
+    border-radius: 15px;
+    min-height: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}

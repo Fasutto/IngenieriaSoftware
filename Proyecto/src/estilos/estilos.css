@@ -1,0 +1,206 @@
+:root{
+    --bg-dark: #0b0b0f;
+    --panel: rgba(255,255,255,0.04);
+    --glass: rgba(255,255,255,0.06);
+    --white: #ffffff;
+    --blue: #0074FF;
+    --blue-hero: linear-gradient(90deg, #0056CC 0%, #0074FF 50%, #2a9cff 100%);
+    --accent-shadow: 0 10px 30px rgba(0,116,255,0.14);
+    --soft-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* Reset y base */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--white);
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Fondo general: oscuro con movimiento sutil en azul */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 10% 20%, rgba(0,116,255,0.08), transparent 10%),
+                radial-gradient(circle at 90% 80%, rgba(42,156,255,0.06), transparent 12%),
+                var(--bg-dark);
+    background-size: 140% 140%;
+    animation: subtleShift 18s ease-in-out infinite;
+}
+
+/* Animación de fondo */
+@keyframes subtleShift {
+    0% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    50% { background-position: 20% 10%, 80% 90%, 50% 50%; }
+    100% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+}
+
+/* Tarjeta de login / panel */
+.login-card {
+    position: relative;
+    width: 420px;
+    max-width: calc(100% - 32px);
+    padding: 36px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px) saturate(120%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass);
+    box-shadow: var(--soft-shadow);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Efecto de brillo sutil */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -30%;
+    width: 180%;
+    height: 180%;
+    background: var(--blue-hero);
+    opacity: 0.05;
+    transform: rotate(-12deg);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.login-card:hover {
+    box-shadow: 0 0 32px rgba(0,116,255,0.18), 0 8px 32px rgba(0,116,255,0.18)
+}
+
+.login-card:hover::before {
+    opacity: 0.12;
+}
+
+/* Logo centrado */
+.login-card .logo {
+    display: block;
+    margin: 0 auto 18px;
+    width: 140px;
+    height: auto;
+}
+
+/* Título */
+.login-card h2 {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.6px;
+    margin-bottom: 26px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    outline: none;
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--white);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    transition: all 0.28s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255,255,255,0.55);
+}
+
+.input-group input:focus {
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 10px 26px rgba(0,116,255,0.12);
+    border-color: rgba(0,116,255,0.28);
+    transform: translateY(-2px);
+}
+
+/* Floating label (si se usa) */
+.input-group label{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -10px;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.35);
+}
+
+/* Botón principal (Login) - basado en blanco/azul */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--blue);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-shadow: var(--accent-shadow);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,116,255,0.18);
+    filter: brightness(1.03);
+}
+
+/* Botones secundarios (estilo claro sobre fondo oscuro) */
+.btn-secondary {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.02);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Pequeñas utilidades */
+.text-muted {
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+    .login-card { padding: 24px; width: 360px; border-radius: 14px; }
+    .login-card h2 { font-size: 26px; }
+    .input-group input { padding: 12px 14px; font-size: 15px; }
+    .login-btn { padding: 12px; font-size: 15px; border-radius: 10px; }
+}

@@ -1,0 +1,106 @@
+:root{
+  --card-bg: #0f1724;
+  --accent: #0A66C2;
+  --muted: #bdbdbd;
+  --white: #ffffff;
+}
+
+.profile-grid{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:20px;
+  margin-top:14px;
+}
+
+/* tarjetas */
+.profile-card{
+  background: var(--card-bg);
+  padding:16px;
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* cabecera de info - ahora centrada con foto arriba y texto debajo */
+.profile-header{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  margin: 6px 0;
+  text-align:center;
+}
+
+/* foto redonda y centrada */
+.profile-large-photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* metadatos centrados debajo de la foto */
+.profile-meta{
+  margin-top:6px;
+}
+.profile-meta.centered p{
+  margin:8px 0;
+  color:var(--white);
+}
+.profile-meta .muted{
+  color:var(--muted);
+}
+
+/* etiqueta "Foto" menor */
+.photo-label{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* formulario */
+.form input{
+  display:block;
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:transparent;
+  color:var(--white);
+  box-sizing:border-box;
+}
+
+/* acciones formulario */
+.form-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+/* botones */
+.primary{
+  background: var(--accent);
+  color: #fff;
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.secondary{
+  background: transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--white);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* responsive: apilar en pantallas pequeñas */
+@media (max-width:900px){
+  .profile-grid{ grid-template-columns: 1fr; }
+  .profile-large-photo{ width:96px; height:96px; }
+}

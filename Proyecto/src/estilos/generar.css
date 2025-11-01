@@ -1,0 +1,52 @@
+/* Estilos para lista y detalle (selección resaltada y vista sin inputs) */
+.doc-list { display:flex; flex-direction:column; gap:8px; padding:0; margin:0; }
+.doc-item{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background: transparent;
+  cursor:pointer;
+  transition: box-shadow .12s ease, transform .06s;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.doc-item .doc-title { font-weight:700; }
+.doc-item .doc-desc { font-size:13px; color:var(--muted); }
+
+/* hover */
+.doc-item:hover{ transform:translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.25); }
+
+/* Resaltado alrededor del documento seleccionado */
+.doc-item.selected{
+  border-color: var(--accent, #0A66C2);
+  box-shadow: 0 10px 22px rgba(10,102,194,0.12);
+  background: rgba(10,102,194,0.04);
+  outline: 3px solid rgba(10,102,194,0.06);
+}
+
+/* Por seguridad: ocultar cualquier botón o input dentro del item (debe seleccionarse, no tener botones) */
+.doc-item button,
+.doc-item .btn,
+.doc-item input,
+.doc-item select,
+.doc-item textarea {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Panel detalle: ocultar inputs si por alguna razón aparecen */
+#doc-detail-container input,
+#doc-detail-container select,
+#doc-detail-container textarea {
+  display: none !important;
+}
+
+/* Botones en detalle: sólo 3 visibles, estilo consistente */
+.detail-actions { display:flex; gap:10px; align-items:center; }
+.detail-actions .btn { padding:9px 12px; border-radius:8px; font-weight:700; }
+.detail-actions .btn.primary { background: var(--accent); color:#fff; border: none; }
+.detail-actions .btn.secondary { background: transparent; color: var(--text); border:1px solid rgba(255,255,255,0.06); }
+
+/* Mensaje inicial */
+.detail-empty .small { margin: 12px 0; color: var(--muted); }
